@@ -16,17 +16,16 @@ Including another URLconf
 
 
 # from django.contrib import admin
-# from django.urls import path
+# from django.conf.urls import url
 
+from django.urls import path, re_path
 from mygis import views
-from django.conf.urls import url
-'''
+
 urlpatterns = [
-    path('', views.home, name='home'),
+    re_path('^$', views.home, name='home'),
 ]
 '''
-
 urlpatterns = [
     url(r'^$', views.home, name='home'),
 ]
-
+'''
