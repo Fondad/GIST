@@ -7,18 +7,14 @@
 
 {% block content %}
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        {% for article in articles %}
+            {% comment %}
+                <h2>{{ article.title}}</h2>
+                <p class="lead">{{ article.text }}</p>
+            {% endcomment %}
+            <h2><a href="{% url 'article' article.id %} ">{{ article.title}}</a></h2>
+            <p class="lead">{{ article.get_short_text }}</p>
+        {% endfor %}
       </div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque culpa dolor earum, excepturi illum inventore
-        itaque iure labore necessitatibus officia praesentium quod quos unde? Ipsum laboriosam nemo numquam vero vitae?
-    </div>
-    <div>Animi atque consequuntur culpa deleniti dolor ex facere ipsum, itaque magnam minima minus natus numquam odio,
-        odit officia, omnis optio pariatur quaerat reprehenderit repudiandae sit tenetur unde velit vitae voluptatem.
-    </div>
-    <div>Aperiam architecto blanditiis consectetur consequatur consequuntur deleniti dignissimos eos eveniet
-        exercitationem facere hic, iste minima numquam optio quae quis quisquam rem repellendus sequi, sint tempore
-        tenetur vel veritatis voluptate voluptates!
-    </div>
 {% endblock %}
 
