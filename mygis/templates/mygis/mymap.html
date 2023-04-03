@@ -29,7 +29,7 @@
 
         const view = new MapView({
           map: map,
-          center: [-118.805, 34.027] // Longitude, latitude
+          center: [-118.805, 34.027], // Longitude, latitude
           zoom: 13, // Zoom level
           container: "viewDiv" // Div element
         });
@@ -42,7 +42,7 @@
             return view.goTo(options.target);
           }
         });
-        view.ui.add(locate, "top-left");
+        view.ui.add(locate, "top-right");
 
       });
     </script>
